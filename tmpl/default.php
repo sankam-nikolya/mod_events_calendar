@@ -76,7 +76,7 @@ $script = "
 							lang: '" . $lang . "'
 						},
 						error: function(data) {
-							alert('" . JText::_('COM_EVENTS_ERROR_LOADING_EVENTS') . "');
+							alert('" . JText::_('MOD_EVENTS_CALENDAR_ERROR_LOADING_EVENTS') . "');
 						}
 				},
 				eventClick: function(calEvent, jsEvent, view) {
@@ -101,7 +101,7 @@ $script = "
 							$('#eventModal-" . $module->id . "').modal('show');
 						},
 						error: function(data) {
-							alert('" . JText::_('COM_EVENTS_ERROR_LOADING_EVENT') . "');
+							alert('" . JText::_('MOD_EVENTS_CALENDAR_ERROR_LOADING_EVENT') . "');
 						}
 					});
 				}
