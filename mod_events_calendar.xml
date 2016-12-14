@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" method="upgrade" client="site">
+	<name>MOD_EVENTS_CALENDAR</name>
+	<creationDate>Dec 2016</creationDate>
+	<author>Nikolya</author>
+	<authorEmail>k_m_i@i.ua</authorEmail>
+	<authorUrl>http://sankam.com.ua</authorUrl>
+	<copyright>Copyright © 2016 - All rights reserved.</copyright>
+	<license>GNU General Public License v2.0</license>
+	<version>0.0.1</version>
+	<description>MOD_EVENTS_CALENDAR_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_events_calendar">mod_events_calendar.php</filename>
+		<filename>mod_events_calendar.xml</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<folder>fields</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic"
+				addfieldpath="/modules/mod_events_calendar/fields">
+				<field name="category" 
+					type="foreignkey" 
+					label="MOD_EVENTS_CALENDAR_CATEGORY_LBL" 
+					description="MOD_EVENTS_CALENDAR_DESC" 
+					class="inputbox" 
+					input_type="list" 
+					table="#__events_categories" 
+					key_field="id" 
+					value_field="title" 
+					default=""/>
+				<field name="type" 
+					type="radio" 
+					class="btn-group"  
+					default="2" 
+					filter="INT" 
+					label="MOD_EVENTS_CALENDAR_VIEW_TYPE_LBL" 
+					description="MOD_EVENTS_CALENDAR_VIEW_TYPE_DESC">
+					<option value="0">MOD_EVENTS_CALENDAR_VIEW_TYPE_DAY</option>
+					<option value="1">MOD_EVENTS_CALENDAR_VIEW_TYPE_WEEK</option>
+					<option value="2">MOD_EVENTS_CALENDAR_VIEW_TYPE_MONTH</option>
+				</field>
+				<field name="controls" 
+					type="radio" 
+					class="btn-group btn-group-yesno"  
+					default="0" 
+					filter="INT" 
+					label="MOD_EVENTS_CALENDAR_VIEW_CONTROLS_LBL" 
+					description="MOD_EVENTS_CALENDAR_VIEW_CONTROLS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config> 
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_events_calendar.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_events_calendar.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_events_calendar.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_events_calendar.ini</language>
+	</languages>
+</extension>
